@@ -59,32 +59,32 @@ const RegisterRoomBuilding: React.FC = () => {
         switch (largeBuildingType) {
             case "아파트": {
                 const { apartmentBuildingTypeList } = require("../../lib/staticData");
-                dispatch(registerRoomActions.setLargeBuildingType(apartmentBuildingTypeList[0]));
+                dispatch(registerRoomActions.setBuildingType(apartmentBuildingTypeList[0]));
                 return apartmentBuildingTypeList;
             }
             case "주택": {
                 const { houstBuildingTypeList } = require("../../lib/staticData");
-                dispatch(registerRoomActions.setLargeBuildingType(houstBuildingTypeList[0]));
+                dispatch(registerRoomActions.setBuildingType(houstBuildingTypeList[0]));
                 return houstBuildingTypeList;
             }
             case "별채": {
                 const { secondaryUnitBuildingTypeList } = require("../../lib/staticData");
-                dispatch(registerRoomActions.setLargeBuildingType(secondaryUnitBuildingTypeList[0]));
+                dispatch(registerRoomActions.setBuildingType(secondaryUnitBuildingTypeList[0]));
                 return secondaryUnitBuildingTypeList;
             }
             case "독특한 숙소": {
                 const { uniqueSpaceBuildingTypeList } = require("../../lib/staticData");
-                dispatch(registerRoomActions.setLargeBuildingType(uniqueSpaceBuildingTypeList[0]));
+                dispatch(registerRoomActions.setBuildingType(uniqueSpaceBuildingTypeList[0]));
                 return uniqueSpaceBuildingTypeList;
             }
             case "B&B": {
                 const { bnbBuildingTypeList } = require("../../lib/staticData");
-                dispatch(registerRoomActions.setLargeBuildingType(bnbBuildingTypeList[0]));
+                dispatch(registerRoomActions.setBuildingType(bnbBuildingTypeList[0]));
                 return bnbBuildingTypeList;
             }
             case "부티크호텔": {
                 const { boutiquesHotelBuildingTypeList } = require("../../lib/staticData");
-                dispatch(registerRoomActions.setLargeBuildingType(boutiquesHotelBuildingTypeList[0]));
+                dispatch(registerRoomActions.setBuildingType(boutiquesHotelBuildingTypeList[0]));
                 return boutiquesHotelBuildingTypeList;
             }
             default:
