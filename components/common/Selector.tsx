@@ -18,7 +18,7 @@ const normalSelectorStyle = css`
         padding: 0 11px;
         border-radius: 4px;
         outline: none;
-        --webkit-appearance: none;
+        -webkit-appearance: none;
         background-image: url("/static/svg/common/selector/selector_down_arrow.svg");
         background-position: right 11px center;
         background-repeat: no-repeat;
@@ -50,8 +50,8 @@ const RegisterSelectorStyle = css`
         padding: 0 14px 0 12px;
         appearance: none;
         outline: none;
-        --webkit-appearance: none;
-        background-image: url()("/public/static/svg/common/selector/register_selector_down_arrow.svg");
+        -webkit-appearance: none;
+        background-image: url()("/static/svg/common/selector/register_selector_down_arrow.svg");
         background-position: right 14px center;
         background-repeat: no-repeat;
     }
@@ -84,7 +84,7 @@ const Container = styled.div<SelectorContainerProps>`
         }}
 
         &:disabled{
-            background-image: url("/public/static/svg/common/selector/disabled_register_selector_down_arrow.svg");
+            background-image: url("/static/svg/common/selector/disabled_register_selector_down_arrow.svg");
             background-color: ${palette.gray_f7};
             border-color: ${palette.gray_e5};
             color: ${palette.gray_e5};
