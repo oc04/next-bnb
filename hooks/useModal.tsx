@@ -39,7 +39,6 @@ const useModal = () => {
     const ModalPortal: React.FC<IProps> = ({ children }) => {
 
         const authMode = useSelector((state: RootState) => state.auth.authMode);
-        console.log("modalportal authMode : " + authMode);
 
         const ref = useRef<Element | null>();
         const [mounted, setMounted] = useState(false);

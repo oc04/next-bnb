@@ -27,7 +27,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             }
 
             const token = jwt.sign(String(user.id), process.env.JWT_SECRET!);
-            console.log(token);
             
             res.setHeader(
                 "Set-Cookie",

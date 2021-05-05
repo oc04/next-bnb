@@ -15,7 +15,7 @@ interface IProps {
 
 const AuthModal: React.FC<IProps> = ({ closeModal }) => {
   const authMode = useSelector((state: RootState) => state.auth.authMode);
-  console.log("authMode : " + authMode)
+  
   return (
     <Container>
       {authMode === "signup" && <SignUpModal closeModal={closeModal} />}

@@ -28,8 +28,6 @@ interface IProps {
 
 const ModalPortal: React.FC<IProps> = ({ children, closePortal }) => {
 
-  console.log("modalPortal.tsx call");
- 
     const ref = useRef<Element | null>();
     const [mounted, setMounted] = useState(false);
   

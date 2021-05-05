@@ -137,7 +137,7 @@ const Header: React.FC = () => {
   const dispatch = useDispatch();
 
   const authMode = useSelector((state: RootState) => state.auth.authMode);
-  console.log("Header authMode : " + authMode);
+  
 
   //* 로그아웃 하기
   const logout = async () => {

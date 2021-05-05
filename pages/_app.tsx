@@ -23,9 +23,6 @@ const app = ({ Component, pageProps}: AppProps) => {
 app.getInitialProps = async (context: AppContext) => {
     const appInitialProps = await App.getInitialProps(context);
     const cookieObject = cookieStringToObject(context.ctx.req?.headers.cookie);
-    console.log(cookieObject);
-    console.log(axios.defaults.baseURL);
-    
     
     const { store } = context.ctx;
     const { isLogged } = store.getState().user;
@@ -33,12 +30,8 @@ app.getInitialProps = async (context: AppContext) => {
         if (!isLogged && cookieObject.access_token) {
             axios.defaults.headers.cookie = cookieObject.access_token;
             
-            console.log(axios.defaults.headers.cookie);
-            
            //const { data } = await meAPI();
            const { data } = await axios.get("/api/auth/me");
-
-            console.log({data});
 
             store.dispatch(userActions.setLoggedUser(data));
         }
