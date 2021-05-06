@@ -137,8 +137,10 @@ const RegisterRoomBuilding: React.FC = () => {
     //        )
     //    );
     //};
-    const onChangeRoomType = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        const selected = event;
+    //const onChangeRoomType = (event: React.ChangeEvent<HTMLInputElement>) => {
+    //    const selected = event;
+    const onChangeRoomType = (value: any) => {
+        const selected = value;
         dispatch(
             registerRoomActions.setRoomType(
                 selected as "entire" | "private" | "public"
