@@ -46,6 +46,13 @@ const Container = styled.div`
         width: 320px;
         margin-bottom: 57px;
     }
+
+    .register-room-bed-type-info{
+        margin-top: 6px;
+        margin-bottom: 20px;
+        max-width: 400px;
+        word-break: keep-all;
+    }
 `;
 
 const RegisterRoomBedrooms: React.FC = () => {
@@ -95,6 +102,11 @@ const RegisterRoomBedrooms: React.FC = () => {
             <div className="register-room-bed-count-wrapper">
                 <Counter label="침대" value={bedCount} onChange={onChangeBedCount} />
             </div>
+            
+            <h4>침대 유형</h4>
+            <p className="register-room-bed-type-info">
+                각 침실에 놓인 침대 유형을 명시하면 숙소에 침대가 어떻게 구비되어 있는지 게스트가 잘 파악할 수 있습니다.
+            </p>
         </Container>
     );   
 };
