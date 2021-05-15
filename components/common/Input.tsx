@@ -10,6 +10,13 @@ type InputContainerProps = {
 };
 
 const Container = styled.div<InputContainerProps>`
+    label {
+        span {
+            display: block;
+            margin-bottom: 8px;
+        }
+    }
+
     input {
         position: relative;
         width: 100%;
@@ -70,6 +77,7 @@ const Container = styled.div<InputContainerProps>`
 `;
 
 interface IProps extends React.InputHTMLAttributes<HTMLInputElement> {
+    label?: string;
     icon?: JSX.Element;
     isValid?: boolean;
     useValidation?: boolean;
@@ -77,6 +85,7 @@ interface IProps extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 const Input: React.FC<IProps> = ({ 
+    label,
     icon,
     isValid=false, 
     useValidation=true, 
@@ -90,7 +99,13 @@ const Input: React.FC<IProps> = ({
             isValid={isValid} 
             useValidation={validateMode && useValidation}
         >
-            <input {...props} />    
+            {label && (
+                <label>
+                    <span>{label}</span>
+                    <input {...props} />    
+                </label>
+            )}
+            {!label && <input {...props} />}
             
             {useValidation && validateMode && !isValid && errorMessage && (<p className="input=error-message">{errorMessage}</p>)}
             <div className="input-icon-wrapper">{icon}</div>
