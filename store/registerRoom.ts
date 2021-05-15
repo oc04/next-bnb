@@ -12,6 +12,9 @@ type RegisterRoomState = {
     bedCount: number;
     bedList: {id: number; beds:{ type: BedType; count: number }[] }[];
     publicBedList: { type: BedType; count: number }[];
+
+    bathroomCount: number;
+    bathroomType: "private" | "public" | null;
 };
 
 //* 초기상태
@@ -35,12 +38,18 @@ const initialState: RegisterRoomState ={
     bedList: [],
     //* 공용공간 침대 유형
     publicBedList: [],
+
+    //* 욕실 개수
+    bathroomCount: 1,
+    //* 욕실 유형
+    bathroomType: null,
 };
 
 const registerRoom = createSlice({
     name: "registerRoom",
     initialState,
     reducers: {
+        //* chap 11
         //* 큰 건물 유형 변경하기
         setLargeBuildingType(state, action: PayloadAction<string>) {
             if (action.payload === "") {
@@ -71,6 +80,7 @@ const registerRoom = createSlice({
             return state;
         },
 
+        //* chap 12
         //* 최대 숙박 인원 변경하기
         setMaximumGuestCount(state, action: PayloadAction<number>){
             state.maximumGuestCount = action.payload;
@@ -156,6 +166,18 @@ const registerRoom = createSlice({
                 state.publicBedList[index].count = count;
             }
             return state;
+        },
+
+
+        //* chap 13
+        //* 욕실 개수 변경하기
+        setBathroomCount(state, action: PayloadAction<number>){
+            state.bathroomCount = action.payload;
+        },
+
+        //* 욕실 유형 변경하기
+        setBathroomType(state, action: PayloadAction<"private" | "public">){
+            state.bathroomType = action.payload;
         },
         
     },
