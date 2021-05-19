@@ -1,0 +1,19 @@
+//* 제리님 깃
+https://github.com/jerrynim/next-airbnb.git
+
+
+//* 내 깃
+https://github.com/oc04/next-bnb.git
+
+
+//* 구글 맵 URL
+https://developers.google.com/maps/documentation/geocoding/overview
+
+https://console.cloud.google.com/
+
+https://console.cloud.google.com/apis/library
+
+
+//* 구글 맵 사용자 키
+AIzaSyDc-A688fDKohb-bn9MlElILvUj5TwBLNI
+
