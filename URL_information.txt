@@ -13,6 +13,3 @@ https://console.cloud.google.com/
 
 https://console.cloud.google.com/apis/library
 
-
-//* 구글 맵 사용자 키
-AIzaSyBbYxsw-JDJZB1IXaG-1fQYqwkdgxTaPcA
