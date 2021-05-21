@@ -5,7 +5,7 @@ import { bedTypes } from "../../../lib/staticData";
 import { registerRoomActions } from "../../../store/registerRoom";
 import palette from "../../../styles/palette";
 import { BedType } from "../../../types/room";
-import Button from "../../common/Button";
+import Button from "../../common/RegisterButton";
 import Counter from "../../common/Counter";
 import Selector from "../../common/Selector";
 
@@ -105,7 +105,7 @@ const RegisterRoomBedTypes: React.FC<IProps> = ({ bedroom }) => {
                     <p className="register-room-bed-type-bedroom">{bedroom.id}번 침실</p>
                     <p className="register-room-bed-type-bedroom-counts">침대 {totalBedsCount}개 <br /> {bedsText}</p>
                 </div>
-                <Button onClick={toggleOpened} styleType="register" color="white">
+                <Button onClick={toggleOpened} color="white">
                     {opened && "완료"}
                     {!opened && (totalBedsCount === 0 ? "침대 추가하기" : "침대 수정하기")}
                 </Button>
