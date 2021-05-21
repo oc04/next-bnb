@@ -2,5 +2,8 @@
 //* BOOK
 yarn add @type/googlemaps -D
 
-//* Babel/runtime 장애 문제 
+//* Babel/runtime 장애 문제로 추가함
 yarn add @babel/runtime
+
+//* jerrynim 혼자 쓴 lodash 추가함
+yarn add @types/lodash
