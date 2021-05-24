@@ -7,3 +7,8 @@ yarn add @babel/runtime
 
 //* jerrynim 혼자 쓴 lodash 추가함
 yarn add @types/lodash
+
+2021-05-24
+//* BOOK p460
+yarn add formidable
+yarn add @types/formidable -D
