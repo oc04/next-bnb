@@ -12,3 +12,10 @@ yarn add @types/lodash
 //* BOOK p460
 yarn add formidable
 yarn add @types/formidable -D
+
+
+2021-05-25
+//* BOOK p469 pdf148
+yarn add aws-sdk
+yarn add uuid
+yarn add @types/uuid -D
