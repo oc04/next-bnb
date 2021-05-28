@@ -19,3 +19,11 @@ yarn add @types/formidable -D
 yarn add aws-sdk
 yarn add uuid
 yarn add @types/uuid -D
+
+
+2021-05-28
+//* BOOK p490 pdf168
+yarn add react-autosize-textarea
+//* BOOK p506 pdf184
+yarn add react-datepicker
+yarn add @types/react-datepicker -D
