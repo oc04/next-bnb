@@ -17,8 +17,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             const url = await new Promise((resolve, reject) => {
                 form.parse(req, async (err, fields, files) => {
                     const s3 = new aws.S3({
-                        accessKeyId: process.env.ACCESSKEY_ID,
-                        secretAccessKey: process.env.SECRET_ACCESSKEY_ID,
+                        accessKeyId: process.env.ACCESSKEY_ID!,
+                        secretAccessKey: process.env.SECRET_ACCESSKEY_ID!,
                     });
                     
                     const stream = createReadStream(files.file.path);
@@ -34,10 +34,11 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
                             Key: `${originalFileName}__${uuidv4()}.${fileExtension}`,
                             ACL: "public-read",
                             Body: stream,
+
                         })
                         .promise()
-                        .then((res) => console.log(res.Location))
-                        .catch((e) => console.log(e));
+                        .then((res) => resolve(res.Location))
+                        .catch((e) => reject(e));
                 });
             });
             res.statusCode = 201;

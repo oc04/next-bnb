@@ -9,6 +9,7 @@ import { uploadFileAPI } from "../../../lib/api/file";
 import { useDispatch } from "react-redux";
 import { registerRoomActions } from "../../../store/registerRoom";
 import RegisterRoomPhotoCardList from "./RegisterRoomPhotoCardList";
+import RegisterRoomFooter from "../../register/RegisterRoomFooter";
 
 
 const Container = styled.div`
@@ -56,6 +57,9 @@ const RegisterRoomPhoto: React.FC = () => {
 
     const photos = useSelector((state) => state.registerRoom.photos);
 
+    console.log(photos);
+    
+
     const dispatch = useDispatch(); 
 
     //* 파일 업로드 하기
@@ -94,9 +98,13 @@ const RegisterRoomPhoto: React.FC = () => {
                     />
                     <Button icon={<UploadIcon />} color="white" width="167px">사진 업로드</Button>
                 </>
-                {!isEmpty(photos) && <RegisterRoomPhotoCardList photos={photos} />}
                 </div>
             )}
+            {!isEmpty(photos) && <RegisterRoomPhotoCardList photos={photos} />}
+            <RegisterRoomFooter
+                prevHref="/room/register/conveniences"
+                nextHref="/room/register/description"
+            />
         </Container>
     );
 };
