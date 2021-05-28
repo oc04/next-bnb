@@ -32,9 +32,10 @@ const Container = styled.div`
 `;
 
 const RegisterRoomDescription: React.FC = () => {
+    const description = useSelector((state) => state.registerRoom.description);
+    
     const dispatch = useDispatch();
 
-    const description = useSelector((state) => state.registerRoom.description);
 
     //* 숙소 설명 변경 시
     const onChangeDescription = (e:React.ChangeEvent<HTMLTextAreaElement>) => dispatch(registerRoomActions.setDescription(e.target.value));
