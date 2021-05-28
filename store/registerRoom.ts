@@ -30,6 +30,8 @@ type RegisterRoomState = {
     conveniences: string[];
 
     photos: string[];
+
+    description: string;
 };
 
 //* 초기상태
@@ -88,6 +90,9 @@ const initialState: RegisterRoomState ={
         "https://oc04-bucket.s3.ap-northeast-2.amazonaws.com/%EA%B0%9D1__326f79d0-3b4c-429c-b895-e6f83acd8f2f.jpg",
         "https://oc04-bucket.s3.ap-northeast-2.amazonaws.com/%EA%B0%9D2__8c394a65-efe6-479e-8a24-ebfb57ed9ec3.jpg",
     ],
+
+    //* 숙소 설명
+    description: "",
 };
 
 const registerRoom = createSlice({
@@ -277,6 +282,12 @@ const registerRoom = createSlice({
         //* 숙소 사진 변경하기
         setPhotos(state, action: PayloadAction<string[]>){
             state.photos = action.payload;
+        },
+
+        //* chap 18
+        //* 숙소 설명 변경하기
+        setDescription(state, action: PayloadAction<string>){
+            state.description = action.payload;
         },
     },
 });
