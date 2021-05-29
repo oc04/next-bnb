@@ -27,3 +27,8 @@ yarn add react-autosize-textarea
 //* BOOK p506 pdf184
 yarn add react-datepicker
 yarn add @types/react-datepicker -D
+
+
+2021-05-29
+//* BOOK 512 pdf 192
+yarn add date-fns
