@@ -96,6 +96,7 @@ const RegisterLocation: React.FC = () => {
             dispatch(registerRoomActions.setDistrict(currentLocation.district));
             dispatch(registerRoomActions.setStreetAddress(currentLocation.streetAddress));
             dispatch(registerRoomActions.setPostcode(currentLocation.postcode));
+            dispatch(registerRoomActions.setLatitude(currentLocation.latitude));
             dispatch(registerRoomActions.setLongitude(currentLocation.longitude));
         } catch (e) {
             console.log(e);
