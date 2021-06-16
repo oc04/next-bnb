@@ -4,7 +4,7 @@ import palette from "../../styles/palette";
 
 //* 버튼 색상 구하기
 const getButtonColor = (color: string, colorReverse: boolean) => {
-    if(colorReverse){
+    if (colorReverse) {
         switch (color) {
             case "dark_cyan":
                 return css`
@@ -31,6 +31,11 @@ const getButtonColor = (color: string, colorReverse: boolean) => {
                 background-color: ${palette.bittersweet};
                 color: white;
             `;
+        case "amaranth":
+            return css`
+                background-color: ${palette.amaranth};
+                color: white;
+            `;
         default:
             return css`
                 background-color: white;
@@ -43,9 +48,9 @@ const getButtonColor = (color: string, colorReverse: boolean) => {
 
 //* 버튼 크기 구하기
 const getButtonSize = (size: "small" | "medium") => {
-    switch (size){
+    switch (size) {
         case "medium":
-            return css `
+            return css`
                 height: 48px;
             `;
         case "small":
@@ -58,7 +63,7 @@ const getButtonSize = (size: "small" | "medium") => {
     }
 };
 
-interface StyledButtonProps{
+interface StyledButtonProps {
     width: string | undefined;
     colorReverse: boolean;
     size: "small" | "medium";
@@ -87,9 +92,9 @@ const Container = styled.button<StyledButtonProps>`
     ${(props) => getButtonSize(props.size)};
 `;
 
-interface IProps extends React.ButtonHTMLAttributes<HTMLButtonElement>{
+interface IProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children: React.ReactNode;
-    color?: "dark_cyan" | "white" | "bittersweet";
+    color?: "dark_cyan" | "white" | "bittersweet" | "amaranth";
     width?: string;
     colorReverse?: boolean;
     icon?: JSX.Element;
@@ -102,7 +107,7 @@ const Button: React.FC<IProps> = ({
     width,
     colorReverse = false,
     icon,
-    size= "medium",
+    size = "medium",
     ...props }) => {
     return (
         <Container
